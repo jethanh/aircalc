@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import markerIcon from "leaflet/dist/images/marker-icon.png";
+import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
+import markerShadow from "leaflet/dist/images/marker-shadow.png";
 
 function AirDistanceCalculator() {
   const [pointA, setPointA] = useState(null);
@@ -9,9 +12,9 @@ function AirDistanceCalculator() {
   const [distance, setDistance] = useState("");
 
   L.Icon.Default.mergeOptions({
-    iconRetinaUrl: require("leaflet/dist/images/marker-icon-2x.png").default,
-    iconUrl: require("leaflet/dist/images/marker-icon.png").default,
-    shadowUrl: require("leaflet/dist/images/marker-shadow.png").default,
+    iconUrl: markerIcon,
+    iconRetinaUrl: markerIcon2x,
+    shadowUrl: markerShadow,
   });
 
   const calculateDistance = () => {
